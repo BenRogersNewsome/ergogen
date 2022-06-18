@@ -12,9 +12,11 @@
     "scripts": {
         "build": "rollup -c",
         "test": "mocha -r test/helpers/register test/index.js",
-        "coverage": "nyc --reporter=html --reporter=text npm test"
+        "coverage": "nyc --reporter=html --reporter=text npm test",
+        "cli": "npm run build && node dist/cli.js"
     },
     "dependencies": {
+        "@babel/preset-typescript": "^7.17.12",
         "@jscad/openjscad": "github:ergogen/oldjscad",
         "fs-extra": "^10.0.0",
         "js-yaml": "^3.14.0",
@@ -25,6 +27,8 @@
         "yargs": "^17.3.0"
     },
     "devDependencies": {
+        "@babel/core": "^7.18.5",
+        "@rollup/plugin-babel": "^5.3.1",
         "@rollup/plugin-commonjs": "^21.0.1",
         "@rollup/plugin-json": "^4.1.0",
         "chai": "^4.3.4",
