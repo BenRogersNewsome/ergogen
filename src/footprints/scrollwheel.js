@@ -20,7 +20,7 @@
 //      if true, will flip the footprint such that the pcb can be reversible
 
 
-module.exports = {
+export default {
     nets: {
       from: undefined,
       to: undefined,

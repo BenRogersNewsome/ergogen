@@ -1,4 +1,4 @@
-const o = require('../../src/operation')
+import * as o from '../../src/operation'
 
 describe('Operation', function() {
 

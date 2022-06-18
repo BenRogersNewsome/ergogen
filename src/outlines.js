@@ -1,10 +1,9 @@
-const m = require('makerjs')
-const u = require('./utils')
-const a = require('./assert')
-const o = require('./operation')
-const Point = require('./point')
-const prep = require('./prepare')
-const anchor_lib = require('./anchor')
+import * as m from 'makerjs'
+import * as u from './utils'
+import * as a from './assert'
+import * as o from './operation'
+import * as Point from './point'
+import * as prep from './prepare'
 
 const rectangle = (w, h, corner, bevel, name='') => {
     const error = (dim, val) => `Rectangle for "${name}" isn't ${dim} enough for its corner and bevel (${val} - 2 * ${corner} - 2 * ${bevel} <= 0)!`
@@ -220,7 +219,7 @@ const layout = exports._layout = (config = {}, points = {}, units = {}) => {
     }
 }
 
-exports.parse = (config = {}, points = {}, units = {}) => {
+export const parse = (config = {}, points = {}, units = {}) => {
     a.unexpected(config, 'outline', ['glue', 'exports'])
     const layout_fn = layout(config.glue, points, units)
 

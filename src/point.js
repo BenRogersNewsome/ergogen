@@ -1,7 +1,7 @@
-const m = require('makerjs')
-const u = require('./utils')
+import * as m from 'makerjs'
+import * as u from './utils'
 
-module.exports = class Point {
+export class Point {
     constructor(x=0, y=0, r=0, meta={}) {
         if (Array.isArray(x)) {
             this.x = x[0]

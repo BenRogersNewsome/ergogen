@@ -8,7 +8,7 @@
 //    keycaps: default is false
 //      if true, will add choc sized keycap box around the footprint
 
-module.exports = {
+export default {
     nets: {
       from: undefined,
       to: undefined

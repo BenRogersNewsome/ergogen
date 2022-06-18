@@ -17,7 +17,7 @@
 //      this will cause the footprint to be symmetrical on each half
 //      pins 1 and 2 must be identical if symmetric is true, as they will overlap
 
-module.exports = {
+export default {
   nets: {
     A: undefined,
     B: undefined,

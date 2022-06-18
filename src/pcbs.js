@@ -1,7 +1,10 @@
-const m = require('makerjs')
-const a = require('./assert')
-const prep = require('./prepare')
-const anchor_lib = require('./anchor')
+import * as m from 'makerjs'
+import * as a from './assert'
+import * as prep from './prepare'
+import * as anchor_lib from './anchor'
+import { footprint_types } from './footprints'
+
+export { inject_footprint } from './footprints'
 
 const kicad_prefix = `
 (kicad_pcb (version 20171130) (host pcbnew 5.1.6)
@@ -113,7 +116,7 @@ const kicad_netclass = `
   )
 `
 
-const makerjs2kicad = exports._makerjs2kicad = (model, layer='Edge.Cuts') => {
+const makerjs2kicad = (model, layer='Edge.Cuts') => {
     const grs = []
     const xy = val => `${val[0]} ${-val[1]}`
     m.model.walk(model, {
@@ -143,13 +146,7 @@ const makerjs2kicad = exports._makerjs2kicad = (model, layer='Edge.Cuts') => {
     return grs.join('\n')
 }
 
-const footprint_types = require('./footprints')
-
-exports.inject_footprint = (name, fp) => {
-    footprint_types[name] = fp
-}
-
-const footprint = exports._footprint = (config, name, points, point, net_indexer, component_indexer, units, extra) => {
+const footprint = (config, name, points, point, net_indexer, component_indexer, units, extra) => {
 
     if (config === false) return ''
 
@@ -232,7 +229,7 @@ const footprint = exports._footprint = (config, name, points, point, net_indexer
     return fp.body(parsed_params)
 }
 
-exports.parse = (config, points, outlines, units) => {
+export const parse = (config, points, outlines, units) => {
 
     const pcbs = a.sane(config.pcbs || {}, 'pcbs', 'object')()
     const results = {}

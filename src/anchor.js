@@ -1,8 +1,7 @@
-const u = require('./utils')
-const a = require('./assert')
-const Point = require('./point')
+import * as a from './assert'
+import * as Point from './point'
 
-const mirror_ref = exports.mirror = (ref, mirror) => {
+export const mirror = (ref, mirror) => {
     if (mirror) {
         if (ref.startsWith('mirror_')) {
             return ref.substring(7)
@@ -13,7 +12,7 @@ const mirror_ref = exports.mirror = (ref, mirror) => {
     return ref
 }
 
-const anchor = exports.parse = (raw, name, points={}, check_unexpected=true, default_point=new Point(), mirror=false) => units => {
+export const parse = (raw, name, points={}, check_unexpected=true, default_point=new Point(), mirror=false) => units => {
     if (a.type(raw)() == 'array') {
         // recursive call with incremental default_point mods, according to `affect`s
         let current = default_point.clone()

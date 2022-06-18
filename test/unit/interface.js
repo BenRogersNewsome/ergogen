@@ -1,8 +1,8 @@
-const fs = require('fs')
-const path = require('path')
-const yaml = require('js-yaml')
-const ergogen = require('../../src/ergogen')
-const version = require('../../package.json').version
+import * as fs from 'fs'
+import * as path from 'path'
+import * as yaml from 'js-yaml'
+import * as ergogen from '../../src/ergogen'
+import * as version from '../../package.json'.version
 
 // fixtures
 const load = name => yaml.safeLoad(fs.readFileSync(

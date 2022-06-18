@@ -1,9 +1,9 @@
-const fs = require('fs-extra')
-const path = require('path')
-const yaml = require('js-yaml')
-const yargs = require('yargs')
-const ergogen = require('./ergogen')
-const pkg = require('../package.json')
+import * as fs from 'fs-extra'
+import * as path from 'path'
+import * as yaml from 'js-yaml'
+import * as yargs from 'yargs'
+import * as ergogen from './ergogen'
+import * as pkg from '../package.json'
 
 // command line args
 

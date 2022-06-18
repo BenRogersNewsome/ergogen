@@ -1,4 +1,4 @@
-exports.inject = (ergogen) => {
+export const inject = (ergogen) => {
     ergogen.inject_footprint('trace_test', {
         nets: {
             P1: 'P1'

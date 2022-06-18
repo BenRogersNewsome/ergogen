@@ -4,7 +4,7 @@
 //    if down, power led will face the pcb
 //    if up, power led will face away from pcb
 
-module.exports = {
+export default {
   nets: {
     RAW: 'RAW',
     GND: 'GND',

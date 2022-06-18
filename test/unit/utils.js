@@ -1,5 +1,5 @@
-const m = require('makerjs')
-const u = require('../../src/utils')
+import * as m from 'makerjs'
+import * as u from '../../src/utils'
 
 describe('Utils', function() {
 

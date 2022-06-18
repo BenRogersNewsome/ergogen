@@ -7,7 +7,7 @@
 //    B: corresponds to pin 2 (for rotary, should be GND)
 //    C: corresponds to pin 3 (for rotary)
 
-module.exports = {
+export default {
     nets: {
         from: undefined,
         to: undefined,

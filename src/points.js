@@ -1,10 +1,10 @@
-const m = require('makerjs')
-const u = require('./utils')
-const a = require('./assert')
-const prep = require('./prepare')
-const anchor_lib = require('./anchor')
+import * as m from 'makerjs'
+import * as u from './utils'
+import * as a from './assert'
+import * as prep from './prepare'
+import * as anchor_lib from './anchor'
 
-const push_rotation = exports._push_rotation = (list, angle, origin) => {
+const push_rotation = (list, angle, origin) => {
     let candidate = origin
     for (const r of list) {
         candidate = m.point.rotate(candidate, r.angle, r.origin)
@@ -15,7 +15,7 @@ const push_rotation = exports._push_rotation = (list, angle, origin) => {
     })
 }
 
-const render_zone = exports._render_zone = (zone_name, zone, anchor, global_key, units) => {
+const render_zone = (zone_name, zone, anchor, global_key, units) => {
 
     // zone-wide sanitization
 
@@ -189,7 +189,7 @@ const render_zone = exports._render_zone = (zone_name, zone, anchor, global_key,
     return points
 }
 
-const parse_axis = exports._parse_axis = (config, name, points, units) => {
+const parse_axis = (config, name, points, units) => {
     if (!['number', 'undefined'].includes(a.type(config)(units))) {
         const mirror_obj = a.sane(config || {}, name, 'object')()
         const distance = a.sane(mirror_obj.distance || 0, `${name}.distance`, 'number')(units)
@@ -218,7 +218,7 @@ const perform_mirror = exports._perform_mirror = (point, axis) => {
     return ['', null]
 }
 
-exports.parse = (config, units) => {
+export const parse = (config, units) => {
 
     // config sanitization
     a.unexpected(config, 'points', ['zones', 'key', 'rotate', 'mirror'])
@@ -312,7 +312,7 @@ exports.parse = (config, units) => {
     return filtered
 }
 
-exports.visualize = (points, units) => {
+export const visualize = (points, units) => {
     const models = {}
     const x_unit = units.visual_x || (units.u - 1)
     const y_unit = units.visual_y || (units.u - 1)

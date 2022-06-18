@@ -1,6 +1,6 @@
-const {parse} = require('../../src/anchor')
-const Point = require('../../src/point')
-const {check} = require('../helpers/point')
+import * as {parse} from '../../src/anchor'
+import * as Point from '../../src/point'
+import * as {check} from '../helpers/point'
 
 describe('Anchor', function() {
 

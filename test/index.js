@@ -1,10 +1,10 @@
-const fs = require('fs-extra')
-const path = require('path')
-const yaml = require('js-yaml')
-const glob = require('glob')
-const u = require('../src/utils')
-const a = require('../src/assert')
-const ergogen = require('../src/ergogen')
+import * as fs from 'fs-extra'
+import * as path from 'path'
+import * as yaml from 'js-yaml'
+import * as glob from 'glob'
+import * as u from '../src/utils'
+import * as a from '../src/assert'
+import * as ergogen from '../src/ergogen'
 require('./helpers/mock_footprints').inject(ergogen)
 
 let what = process.env.npm_config_what
@@ -108,8 +108,8 @@ if (what) {
 
 const read = (d, p) => fs.readFileSync(path.join(d, p)).toString()
 const exists = (d, p) => fs.existsSync(path.join(d, p))
-const { execSync } = require('child_process')
-const dircompare = require('dir-compare')
+import * as { execSync } from 'child_process'
+import * as dircompare from 'dir-compare'
 
 const cli_what = what ? what.filter(w => w.startsWith('cli')) : ['cli']
 

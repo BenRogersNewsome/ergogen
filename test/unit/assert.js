@@ -1,4 +1,4 @@
-const a = require('../../src/assert')
+import * as a from '../../src/assert'
 
 describe('Assert', function() {
 

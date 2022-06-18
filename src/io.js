@@ -1,12 +1,12 @@
-const yaml = require('js-yaml')
-const makerjs = require('makerjs')
-const jscad = require('@jscad/openjscad')
+import * as yaml from 'js-yaml'
+import * as makerjs from 'makerjs'
+import * as jscad from '@jscad/openjscad'
 
-const u = require('./utils')
-const a = require('./assert')
-const kle = require('./kle')
+import * as u from './utils'
+import * as a from './assert'
+import * as kle from './kle'
 
-exports.interpret = (raw, logger) => {
+export const interpret = (raw, logger) => {
     let config = raw
     let format = 'OBJ'
     if (a.type(raw)() == 'string') {
@@ -48,7 +48,7 @@ exports.interpret = (raw, logger) => {
     return [config, format]
 }
 
-exports.twodee = (model, debug) => {
+export const twodee = (model, debug) => {
     const assembly = makerjs.model.originate({
         models: {
             export: u.deepcopy(model)

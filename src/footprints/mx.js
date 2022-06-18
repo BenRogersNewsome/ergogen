@@ -12,7 +12,7 @@
 //
 // note: hotswap and reverse can be used simultaneously
 
-module.exports = {
+export default {
   nets: {
     from: undefined,
     to: undefined

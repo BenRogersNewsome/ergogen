@@ -1,4 +1,4 @@
-const u = require('../../src/units')
+import * as u from '../../src/units'
 
 describe('Units', function() {
 

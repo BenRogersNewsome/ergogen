@@ -1,5 +1,5 @@
-const a = require('./assert')
-const prep = require('./prepare')
+import * as a from './assert'
+import * as prep from './prepare'
 
 const default_units = {
     U: 19.05,
@@ -8,7 +8,7 @@ const default_units = {
     cy: 17
 }
 
-exports.parse = (config = {}) => {
+export const parse = (config = {}) => {
     const raw_units = prep.extend(
         default_units,
         a.sane(config.units || {}, 'units', 'object')(),

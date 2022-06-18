@@ -2,7 +2,7 @@
 // Nets
 //		net: the net this via should be connected to
 
-module.exports = {
+export default {
     nets: {
       net: undefined
     },

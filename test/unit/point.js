@@ -1,6 +1,6 @@
-const m = require('makerjs')
-const Point = require('../../src/point')
-const {check} = require('../helpers/point')
+import * as m from 'makerjs'
+import * as Point from '../../src/point'
+import * as {check} from '../helpers/point'
 
 describe('Point', function() {
 

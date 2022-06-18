@@ -1,4 +1,4 @@
-const p = require('../../src/prepare')
+import * as p from '../../src/prepare'
 
 describe('Prepare', function() {
     it('unnest', function() {

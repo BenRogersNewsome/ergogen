@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     nets: {
         din: undefined,
         dout: undefined,

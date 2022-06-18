@@ -1,14 +1,16 @@
-const u = require('./utils')
-const io = require('./io')
-const prepare = require('./prepare')
-const units_lib = require('./units')
-const points_lib = require('./points')
-const outlines_lib = require('./outlines')
-const cases_lib = require('./cases')
-const pcbs_lib = require('./pcbs')
+import * as u from './utils' 
+import * as io from './io'
+import * as prepare from './prepare'
+import * as units_lib from './units'
+import * as points_lib from './points'
+import * as outlines_lib from './outlines'
+import * as cases_lib from './cases'
+import * as pcbs_lib from './pcbs'
 
-const semver = require('semver')
-const version = require('../package.json').version
+import * as semver from 'semver'
+import * as pkg from '../package.json'
+
+const version = pkg.version
 
 const process = async (raw, debug=false, logger=()=>{}) => {
 
@@ -96,8 +98,5 @@ const process = async (raw, debug=false, logger=()=>{}) => {
     return results
 }
 
-module.exports = {
-    version,
-    process,
-    inject_footprint: pcbs_lib.inject_footprint
-}
+export { version, process }
+export { inject_footprint } from './pcbs'
